@@ -1,0 +1,214 @@
+body {
+    font-family: 'Barlow', sans-serif;
+}
+
+/* Home Page Style */
+
+/* Home Page Header Section Style */
+
+.banner-section-outer{
+    background-image: url('images/home-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+
+.banner-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1.5), transparent);
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    color: white;
+}
+
+.navbar .navbar-brand{
+    display: none;
+}
+.navbar-collapse ul{
+    text-align: center;
+    align-items: center;
+    display: inherit;
+}
+.navbar-nav .nav-item a{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    color: white !important;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item a:hover{
+    color: red !important;
+    background-color: transparent;
+}
+.navbar-nav .active > a{
+    color: white !important;
+}
+.navbar-nav li.active > a:before {
+    content: "";
+    height: 2px;
+    width: 48px;
+    background-color: red;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    z-index: 1;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item .login_btn{
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
+    padding: 13px 28px !important;
+    text-align: center;
+    color: #ffffff !important;
+    background-color: #18181b;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item .login_btn:hover{
+    color: white !important;
+    background-color: red;
+}
+.navbar-nav .nav-item .signup_btn{
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
+    padding: 13px 22px !important;
+    text-align: center;
+    color: white !important;
+    background-color: red;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item .signup_btn:hover{
+    color: white !important;
+    background-color: #18181b;
+}
+.nav-link{
+    padding: 0;
+}
+.navbar-brand {
+    margin-left: 70px;
+    margin-right: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.navbar-nav .navbar-brand{
+    display: block;
+}
+.navbar{
+    padding: 30px 0;
+}
+.navbar-nav li {
+    margin: -30px 24px 0 28px;
+}
+.navbar-nav .mr-0, .mx-0 {
+    margin-right: 20px!important;
+}
+.navbar-nav .mr-1, .mx-1 {
+    margin-right: 15px!important;
+}
+.navbar-expand-lg .navbar-nav a:last-child {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-nav li:first-child{
+    margin-left: 0;
+}
+.navbar-nav li:last-child{
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 16px;
+}
+/* Home Page Social Icons Style */
+
+.left_icons {
+    height: 900px;
+    margin-left: 50px;
+}
+.left_icons ul li{
+    display: flex;
+    padding-bottom: 30px;
+}
+.left_icons ul li i{
+    border: 1px solid white;
+    border-radius: 100%;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    line-height: 46px;
+    height: 46px;
+    width: 46px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.left_icons i:hover{
+    background-color: #bd0507;
+    border: 1px solid #bd0507;
+}
+
+/* Home Page Banner Section Style */
+
+.banner-section{
+    padding: 300px 200px 322px;
+}
+.banner-section h1{
+    margin-bottom: 12px;
+    padding-right: 15px;
+    color: #ffb5b5;
+    font-family: tektur, sans-serif;
+    font-size: 80px;
+    font-weight: bolder;
+}
+.banner-section p{
+    margin-bottom: 36px;
+    padding-right: 105px;
+    color: white;;
+    font-family: tektur, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+.btn_wrapper .readmore_btn {
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 17px 35px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #bd0507;
+    transition: all 0.3s ease-in-out;
+}
+.btn_wrapper .readmore_btn:hover {
+    background-color: #bd0507;
+    border: 2px solid #bd0507;
+}
+.btn_wrapper .joinus_btn {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 17px 48px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    background-color: #bd0507;
+    border: 2px solid #bd0507;
+    transition: all 0.3s ease-in-out;
+}
+.btn_wrapper .joinus_btn:hover {
+    background-color: transparent;
+    border: 2px solid #bd0507;
+}
