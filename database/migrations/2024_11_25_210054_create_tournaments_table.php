@@ -9,10 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('tournaments', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->text('rules')->nullable();
+            $table->string('style');
+            $table->string('type');
+            $table->json('platforms');
+            $table->integer('team_size');
+            $table->integer('min_players');
+            $table->integer('max_players');
+            $table->date('start_date');
+            $table->time('start_time');
+            $table->string('timezone');
+            $table->string('prize')->nullable();
             $table->timestamps();
         });
     }
