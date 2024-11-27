@@ -1,0 +1,7 @@
+.home-tournament-box {
+    font-size: 2rem;
+    font-weight: 800;
+    background-color: lightgray; /* example: add a background color to see if styles are applied */
+    position: relative;
+    height: 100vh; /* Full viewport height */
+}

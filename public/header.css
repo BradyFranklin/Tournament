@@ -1,0 +1,195 @@
+.header-bar-home {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(28, 28, 28, 0.8); /* Initial translucent background */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: background 0.3s ease; /* Smooth transition for background change */
+}
+
+.header-bar {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #1c1c1c; /* Initial translucent background */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: background 0.3s ease; /* Smooth transition for background change */
+}
+
+.header-bar-home.solid {
+    background: #1c1c1c; /* Solid black background */
+}
+
+.header-bar nav a {
+    font-size: 1.2rem; /* Customize the size as needed */
+    padding: 0.5rem 1rem;
+    display: flex; /* Add Flexbox to ensure items are centered vertically */
+    align-items: center;
+}
+
+/* Adjusting vertical alignment specifically for the dropdown item */
+.header-bar .dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the dropdown menu */
+.header-bar .dropdown-menu {
+    background-color: #444; /* Change background color */
+    color: #fff; /* Text color */
+}
+
+.header-bar .dropdown-item {
+    color: #fff; /* Color of the items */
+}
+
+.header-bar .dropdown-item:hover {
+    background-color: #555; /* Background color on hover */
+    color: #d3d3d3; /* Text color on hover */
+}
+
+/* Adjustment for dropdown indicator (caret) alignment */
+.header-bar .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle; /* Ensures the caret aligns vertically in the center */
+}
+
+.header-bar a {
+    color: #fff;
+    text-decoration: beige;
+}
+
+.header-bar a:hover {
+    color: #bd0507;
+}
+
+.container--narrow {
+    max-width: 732px;
+}
+
+.header-search-icon {
+    position: relative;
+    top: 3px;
+}
+
+.header-chat-icon {
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+
+.navbar .navbar-brand{
+    display: inline-block;
+    float: left;
+}
+
+.navbar-collapse ul{
+    text-align: left;
+    align-items: center;
+    display: flex;
+    float: left;
+}
+.navbar-nav .nav-item a{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    color: white !important;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item a:hover{
+    color: red !important;
+    background-color: transparent;
+}
+.navbar-nav .active > a{
+    color: white !important;
+}
+.navbar-nav li.active > a:before {
+    content: "";
+    height: 2px;
+    width: 48px;
+    background-color: red;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    z-index: 1;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item .login_btn{
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
+    padding: 13px 28px !important;
+    text-align: center;
+    color: #ffffff !important;
+    background-color: #18181b;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-item .login_btn:hover{
+    color: white !important;
+    background-color: red;
+}
+.navbar-nav .nav-item .signup_btn{
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 18px !important;
+    padding: 13px 22px !important;
+    text-align: center;
+    color: white !important;
+    background-color: red;
+    transition: all 0.3s ease-in-out;
+    float: right;
+}
+.navbar-nav .nav-item .signup_btn:hover{
+    color: white !important;
+    background-color: #18181b;
+}
+.nav-link{
+    padding: 0;
+}
+.navbar-brand {
+    margin-left: 70px;
+    margin-right: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.navbar-nav .navbar-brand{
+    display: none;
+}
+.navbar{
+    padding: 30px 0;
+}
+.navbar-nav li {
+    margin: 0 24px 0 28px;
+}
+.navbar-nav .mr-0, .mx-0 {
+    margin-right: 20px!important;
+}
+.navbar-nav .mr-1, .mx-1 {
+    margin-right: 15px!important;
+}
+.navbar-expand-lg .navbar-nav a:last-child {
+    padding-right: 0;
+    padding-left: 0;
+    float: right;
+}
+
+.navbar-nav li:first-child{
+    margin-left: 0;
+    float: left;
+}
+
+.navbar-nav li:last-child{
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 16px;
+    float: right;
+}

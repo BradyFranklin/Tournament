@@ -5,24 +5,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>GoatFarm</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./assets/js/bootstrap.min.js">
-    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+    <!-- Preconnect Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Font Awesome link -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/main.css" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/responsive.css" />
+    <link rel="stylesheet" href="/tournament.css" />
+    <link rel="stylesheet" href="/header.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"/>
-    @vite('resources/js/app.js')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="font-sans text-gray-900 antialiased">
 {{--<header class="header-bar mb-3">--}}
 {{--    <div class="container d-flex flex-column flex-md-row align-items-center p-3">--}}
 {{--        <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">OurApp</a></h4>--}}
@@ -68,10 +77,35 @@
         </nav>
 
         <!-- User Section -->
-        <div class="user-section ml-auto">
-            <a href="/cart" class="text-white mx-2"><i class="fas fa-shopping-cart"></i></a>
-            <a href="/profile" class="text-white mx-2"><i class="fas fa-user"></i> Kuroky</a>
-        </div>
+        <!-- If user is authenticated -->
+        @auth
+            <!-- Dropdown containing Profile and Dashboard Links -->
+            <div class="dropdown">
+                <a id="userDropdown" class="text-white mx-2 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i> {{ Auth::user()->name }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                    <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        @endauth
+
+        <!-- If user is a guest -->
+        @guest
+            <!-- Login and Register Links -->
+            <a href="{{ route('login') }}" class="text-white mx-2"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="{{ route('register') }}" class="text-white mx-2"><i class="fas fa-user-plus"></i> Register</a>
+        @endguest
     </div>
 </header>
 <!-- header ends here -->
@@ -127,11 +161,36 @@
     <p class="m-0">Copyright &copy; 2022 <a href="/" class="text-muted">OurApp</a>. All rights reserved.</p>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script>
     $('[data-toggle="tooltip"]').tooltip()
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var selectElements = document.querySelectorAll('.select2');
+        selectElements.forEach(function(selectElement) {
+            $(selectElement).select2({
+                placeholder: "Select your games",
+                allowClear: true,
+            });
+        });
+    });
+</script>
+<script>
+    $(window).on('scroll', function() {
+        const header = $('.header-bar');
+        if ($(window).scrollTop() > 0) {
+            header.addClass('solid');
+        } else {
+            header.removeClass('solid');
+        }
+    });
 </script>
 </body>
 </html>

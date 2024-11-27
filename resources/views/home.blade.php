@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-home>
 {{--    <div class="main-content position-relative text-center text-white">--}}
 {{--        <!-- Background Image -->--}}
 {{--        <div class="main-content-bg" style="background-image: url('{{ asset('images/home-background.png') }}');"></div>--}}
@@ -15,6 +15,8 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
+
+    <!-- Main Section -->
     <div class="banner-section-outer">
         <div class="banner-overlay">
         <!-- SOCIAL ICONS -->
@@ -51,4 +53,4 @@
     <div class="home-tournament-box">
         <h1>Hello Next Box</h1>
     </div>
-</x-layout>
+</x-layout-home>

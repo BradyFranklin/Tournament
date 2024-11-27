@@ -11,80 +11,8 @@ body,
     margin-right: 0.5rem; /* Replace 0.5rem with whatever value you prefer */
 }
 
-.home-tournament-box {
-    font-size: 2rem;
-    font-weight: 800;
-    background-color: lightgray; /* example: add a background color to see if styles are applied */
-    position: relative;
-    height: 100vh; /* Full viewport height */
-}
-
 .display-2 {
     text-align: left;
-}
-
-.header-bar {
-    background: #1c1c1c; /* Dark background */
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.header-bar nav a {
-    font-size: 1.2rem; /* Customize the size as needed */
-    padding: 0.5rem 1rem;
-    display: flex; /* Add Flexbox to ensure items are centered vertically */
-    align-items: center;
-}
-
-/* Adjusting vertical alignment specifically for the dropdown item */
-.header-bar .dropdown-toggle {
-    display: flex;
-    align-items: center;
-}
-
-/* Styling for the dropdown menu */
-.header-bar .dropdown-menu {
-    background-color: #444; /* Change background color */
-    color: #fff; /* Text color */
-}
-
-.header-bar .dropdown-item {
-    color: #fff; /* Color of the items */
-}
-
-.header-bar .dropdown-item:hover {
-    background-color: #555; /* Background color on hover */
-    color: #d3d3d3; /* Text color on hover */
-}
-
-/* Adjustment for dropdown indicator (caret) alignment */
-.header-bar .dropdown-toggle::after {
-    margin-left: 0.5rem;
-    vertical-align: middle; /* Ensures the caret aligns vertically in the center */
-}
-
-.header-bar a {
-    color: #fff;
-    text-decoration: beige;
-}
-
-.header-bar a:hover {
-    color: #d3d3d3;
-}
-
-.container--narrow {
-    max-width: 732px;
-}
-
-.header-search-icon {
-    position: relative;
-    top: 3px;
-}
-
-.header-chat-icon {
-    cursor: pointer;
-    position: relative;
-    top: 3px;
 }
 
 .avatar-small {
