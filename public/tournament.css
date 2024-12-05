@@ -5,3 +5,41 @@
     position: relative;
     height: 100vh; /* Full viewport height */
 }
+
+.tournament-details {
+    background-color: #1c1c1c;
+}
+
+.text-orange {
+    color: #e65c00;
+}
+
+.hexagon {
+    position: relative;
+    width: 90px;
+    height: 92.38px;
+    background-color: #FA461B;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hex-content {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.hex-content h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.hex-content p {
+    margin: 0;
+    font-size: 12px;
+}

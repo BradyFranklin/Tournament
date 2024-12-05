@@ -12,6 +12,10 @@ class TournamentController extends Controller
         return view('tournaments.index', compact('tournaments'));
     }
 
+    public function details(Tournament $tournament) {
+        return view('tournaments.details', compact('tournament'));
+    }
+
     public function create() {
         $styles = config('tournament.styles');
         $types = config('tournament.types');

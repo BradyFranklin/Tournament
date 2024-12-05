@@ -1,5 +1,4 @@
 <x-layout>
-
     <div class="container my-5">
         <h1 class="text-center mb-4">Tournaments</h1>
         @if($tournaments->isEmpty())
@@ -8,8 +7,8 @@
             <div class="row">
                 @foreach ($tournaments as $tournament)
                     <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm" style="background-color: white;"> <!-- Changed background to white -->
-                            <div class="card-body" style="background: rgba(255, 255, 255, 0.7);"> <!-- Add opacity to background for better text readability -->
+                        <div class="card shadow-sm" style="background-color: white;">
+                            <div class="card-body" style="background: rgba(255, 255, 255, 0.7);">
                                 <h5 class="card-title">{{ $tournament->name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Starting on {{ \Carbon\Carbon::parse($tournament->start_date)->format('M. j, Y') }}</h6>
                                 <p class="card-text">
@@ -46,6 +45,7 @@
                                 <p class="card-text">
                                     <strong>Prize:</strong> {{ $tournament->prize }}
                                 </p>
+                                <a href="{{ route('tournaments.details', $tournament->id) }}" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -53,5 +53,4 @@
             </div>
         @endif
     </div>
-
 </x-layout>

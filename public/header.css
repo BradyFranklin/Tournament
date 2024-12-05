@@ -26,7 +26,8 @@
     background: #1c1c1c; /* Solid black background */
 }
 
-.header-bar nav a {
+.header-bar nav a,
+.header-bar-home nav a {
     font-size: 1.2rem; /* Customize the size as needed */
     padding: 0.5rem 1rem;
     display: flex; /* Add Flexbox to ensure items are centered vertically */
@@ -34,38 +35,45 @@
 }
 
 /* Adjusting vertical alignment specifically for the dropdown item */
-.header-bar .dropdown-toggle {
+.header-bar .dropdown-toggle,
+.header-bar-home .dropdown-toggle {
     display: flex;
     align-items: center;
 }
 
 /* Styling for the dropdown menu */
-.header-bar .dropdown-menu {
+.header-bar .dropdown-menu,
+.header-bar-home .dropdown-menu {
     background-color: #444; /* Change background color */
     color: #fff; /* Text color */
 }
 
-.header-bar .dropdown-item {
+.header-bar .dropdown-item,
+.header-bar-home .dropdown-item {
     color: #fff; /* Color of the items */
 }
 
-.header-bar .dropdown-item:hover {
+.header-bar .dropdown-item:hover,
+.header-bar-home .dropdown-item:hover {
     background-color: #555; /* Background color on hover */
     color: #d3d3d3; /* Text color on hover */
 }
 
 /* Adjustment for dropdown indicator (caret) alignment */
-.header-bar .dropdown-toggle::after {
+.header-bar .dropdown-toggle::after,
+.header-bar-home .dropdown-toggle::after {
     margin-left: 0.5rem;
     vertical-align: middle; /* Ensures the caret aligns vertically in the center */
 }
 
-.header-bar a {
+.header-bar a,
+.header-bar-home a {
     color: #fff;
     text-decoration: beige;
 }
 
-.header-bar a:hover {
+.header-bar a:hover,
+.header-bar-home a:hover {
     color: #bd0507;
 }
 
